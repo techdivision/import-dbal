@@ -33,27 +33,6 @@ interface DatabaseConfigurationInterface
 {
 
     /**
-     * The MySQL database type (default).
-     *
-     * @var string
-     */
-    const TYPE_MYSQL = 'mysql';
-
-    /**
-     * The Redis database type (for caching purposes).
-     *
-     * @var string
-     */
-    const TYPE_REDIS = 'redis';
-
-    /**
-     * The Redis cluster database type (for caching purposes).
-     *
-     * @var string
-     */
-    const TYPE_REDIS_CLUSTER = 'redis_cluster';
-
-    /**
      * Return's the database identifier for this database connection.
      *
      * @return string The database identifier
