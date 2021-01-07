@@ -1,7 +1,7 @@
 <?php
 
 /**
- * TechDivision\Import\Utils\ColumnSanitizerTest
+ * TechDivision\Import\Dbal\Utils\ColumnSanitizerTest
  *
  * NOTICE OF LICENSE
  *
@@ -18,7 +18,7 @@
  * @link      http://www.techdivision.com
  */
 
-namespace TechDivision\Import\Utils;
+namespace TechDivision\Import\Dbal\Utils;
 
 use PHPUnit\Framework\TestCase;
 
