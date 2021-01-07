@@ -57,4 +57,31 @@ interface ConfigurationInterface
      * @throws \InvalidArgumentException Is thrown if the mapping with passed key can not be resolved
      */
     public function getFinderMappingByKey($key);
+
+    /**
+     * Return's the database configuration with the passed ID.
+     *
+     * @param string $id The ID of the database connection to return
+     *
+     * @return \TechDivision\Import\Dbal\Configuration\DatabaseConfigurationInterface The database configuration
+     * @throws \Exception Is thrown, if no database configuration is available
+     */
+    public function getDatabaseById($id);
+
+    /**
+     * Return's the databases for the given type.
+     *
+     * @param string $type The database type to return the configurations for
+     *
+     * @return \Doctrine\Common\Collections\Collection The collection with the database configurations
+     */
+    public function getDatabasesByType($type);
+
+    /**
+     * Return's the database configuration.
+     *
+     * @return \TechDivision\Import\Dbal\Configuration\DatabaseConfigurationInterface The database configuration
+     * @throws \Exception Is thrown, if no database configuration is available
+     */
+    public function getDatabase();
 }
