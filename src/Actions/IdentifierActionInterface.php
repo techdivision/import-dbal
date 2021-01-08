@@ -31,35 +31,4 @@ namespace TechDivision\Import\Dbal\Actions;
  */
 interface IdentifierActionInterface extends ActionInterface
 {
-
-    /**
-     * Helper method that create/update the passed entity, depending on
-     * the entity's status.
-     *
-     * @param array       $row  The entity data to create/update
-     * @param string|null $name The name of the prepared statement that has to be executed
-     *
-     * @return string The ID of the persisted entity
-     */
-    public function persist(array $row, $name = null);
-
-    /**
-     * Creates's the entity with the passed attributes.
-     *
-     * @param array       $row  The attributes of the entity to create
-     * @param string|null $name The name of the prepared statement that has to be executed
-     *
-     * @return string The ID of the created entity
-     */
-    public function create(array $row, $name = null);
-
-    /**
-     * Update's the entity with the passed attributes.
-     *
-     * @param array       $row  The attributes of the entity to update
-     * @param string|null $name The name of the prepared statement that has to be executed
-     *
-     * @return string The ID of the updated entity
-     */
-    public function update(array $row, $name = null);
 }
