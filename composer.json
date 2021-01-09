@@ -6,7 +6,6 @@
     "prefer-stable": true,
     "require": {
         "php": ">=7.1.0",
-        "league/event": "~2.0",
         "techdivision/import-cache": "dev-master"
     },
     "require-dev": {
