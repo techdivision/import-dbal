@@ -42,14 +42,14 @@ interface RepositoryInterface
     /**
      * Return's the connection to use.
      *
-     * @return \TechDivision\Import\Connection\ConnectionInterface The connection instance
+     * @return \TechDivision\Import\Dbal\Connection\ConnectionInterface The connection instance
      */
     public function getConnection();
 
     /**
      * Set's the repository instance with the SQL statements to use.
      *
-     * @param \TechDivision\Import\Repositories\SqlStatementRepositoryInterface $sqlStatementRepository The repository instance
+     * @param \TechDivision\Import\Dbal\Repositories\SqlStatementRepositoryInterface $sqlStatementRepository The repository instance
      *
      * @return void
      */
@@ -58,7 +58,7 @@ interface RepositoryInterface
     /**
      * Return's the repository instance with the SQL statements to use.
      *
-     * @return \TechDivision\Import\Repositories\SqlStatementRepositoryInterface The repository instance
+     * @return \TechDivision\Import\Dbal\Repositories\SqlStatementRepositoryInterface The repository instance
      */
     public function getSqlStatementRepository();
 
