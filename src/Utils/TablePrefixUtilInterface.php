@@ -14,6 +14,8 @@
 
 namespace TechDivision\Import\Dbal\Utils;
 
+use TechDivision\Import\Configuration\ConfigurationInterface;
+
 /**
  * Interface for table prefix utility implementations.
  *
@@ -42,4 +44,9 @@ interface TablePrefixUtilInterface extends SqlCompilerInterface
      * @throws \Exception Is thrown if the table name can't be prefixed
      */
     public function getPrefixedTableName($tableName);
+
+    /**
+     * @return ConfigurationInterface
+     */
+    public function getConfiguration(): ConfigurationInterface;
 }
