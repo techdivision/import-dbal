@@ -15,6 +15,7 @@
 namespace TechDivision\Import\Dbal\Utils;
 
 use TechDivision\Import\Configuration\ConfigurationInterface;
+use TechDivision\Import\Services\RegistryProcessorInterface;
 
 /**
  * Interface for table prefix utility implementations.
@@ -49,4 +50,9 @@ interface TablePrefixUtilInterface extends SqlCompilerInterface
      * @return ConfigurationInterface
      */
     public function getConfiguration(): ConfigurationInterface;
+
+    /**
+     * @return RegistryProcessorInterface
+     */
+    public function getRegistryProcessor() : RegistryProcessorInterface;
 }
