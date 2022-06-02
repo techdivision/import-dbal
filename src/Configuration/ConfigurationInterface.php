@@ -78,4 +78,11 @@ interface ConfigurationInterface
      * @throws \Exception Is thrown, if no database configuration is available
      */
     public function getDatabase();
+
+    /**
+     * Return's the array with the black List.
+     *
+     * @return array The Black List
+     */
+    public function getBlackListings();
 }
