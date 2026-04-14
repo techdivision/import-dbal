@@ -83,6 +83,51 @@ $repository->update(['entity_id' => $product['entity_id'], 'name' => 'New Name']
 - Implementiere spezialisierte Interfaces für Entity-Typen
 - Beachte Cache-Strategien bei Implementierung
 
+## Häufige Use Cases
+
+### Repository-Nutzung-Muster
+```php
+// Finder-Methods
+$product = $productRepository->findBySku('SKU-123');
+$category = $categoryRepository->findByPath('Catalog/Category/Path');
+$customer = $customerRepository->findByEmail('customer@example.com');
+
+// CRUD-Operationen
+$repository->create(['sku' => 'NEW-SKU', 'name' => 'New Product']);
+$repository->update(['sku' => 'OLD-SKU', 'name' => 'Updated']);
+```
+
+### Szenarien
+1. **Entity-Lookup**: Schnelle Find-by-ID, SKU, Email Operationen
+2. **Bulk-Updates**: Batch-Updates via Repository
+3. **Cache-Integration**: DBAL arbeitet mit Cache-Layer
+
+## Performance-Überlegungen
+
+- **Interface-Overhead**: Minimal - nur polymorphic dispatch
+- **Implementierungs-abhängig**: Performance hängt von Tier 2 Implementierung ab
+- **Cache-Benefit**: Mit `import-cache` können 80-90% der Lookups aus Cache erfolgen
+- **Batch-Operations**: Repository-Pattern ermöglicht Batch-Optimierungen
+- **Finder-Performance**: Spezialisierte Finder (findBySku, etc.) können optimiert sein
+
+## Verwandte Module
+
+- **import-dbal-collection**: Implementiert diese Interfaces mit Collections
+- **import-cache**: DBAL nutzt Cache für Performance
+- **import**: Core Framework nutzt DBAL-Repositories
+- **import-dbal** ← **diese Datei** (nur Interfaces!)
+
+## Troubleshooting & FAQ
+
+**Q: Wo ist die SQL-Implementierung?**
+- A: Nicht hier! Schema in `import-dbal-collection` für Collection-basierte Implementierung.
+
+**Q: Kann ich eigenes Repository bauen?**
+- A: Ja! Implementiere `RepositoryInterface` und spezialisierte Interfaces.
+
+**Q: Wie cache ich diese Repository-Calls?**
+- A: Via `import-cache` - DBAL-Implementierungen sind mit `CacheAdapterInterface` integriert.
+
 ## Bekannte Einschränkungen
 
 - **Nur Interfaces**: Keine konkrete Implementierung
